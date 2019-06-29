@@ -1,0 +1,31 @@
+{
+  "available": {
+    "police_id1":{
+      "userId" : "police_id1",
+      "status" : "available"
+    }
+  },
+
+  "duty" : {
+    "police_id1":{
+      "userId" : "police_id1",
+      "status" : "duty"
+    }
+  },
+
+  "records" : {
+    "police_id1" :{
+      "caseId1" : "caseId1",
+      "caseId2" : "caseId2",
+      "caseId3" : "caseId3",
+      "caseId4" : "caseId4"
+    },
+
+    "police_id2" :{
+      "caseId1" : "caseId1",
+      "caseId2" : "caseId2",
+      "caseId3" : "caseId3",
+      "caseId4" : "caseId4"
+    }
+  }
+}
