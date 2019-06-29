@@ -1,2 +1,1 @@
-NODE_ENV=staging webpack
 NODE_ENV=staging nodemon
