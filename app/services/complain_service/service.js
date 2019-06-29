@@ -77,9 +77,9 @@ module.exports = {
         let user = data.user
         let complain = data.complain
 
-        // if(user.type != "police"){
-        //     callback("ONLY POLICE CAN DO IT",null)
-        // }
+        if(user.type != "police"){
+            callback("ONLY POLICE CAN DO IT",null)
+        }
 
         complainRef.child(complain.complainId).set(null,function (error) {
             if(error){
@@ -102,8 +102,6 @@ module.exports = {
             }
 
         })
-
-
 
     }
 };

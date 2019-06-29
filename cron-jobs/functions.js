@@ -3,25 +3,10 @@
  */
 
 
-var cron = require('node-cron');
-var admin = require("firebase-admin");
-var serviceAccount = require("./key/firebase-admin-key.json");
-
-admin.initializeApp({
-    databaseURL: "https://police-info.firebaseio.com",
-    credential: admin.credential.cert(serviceAccount),
-});
-
-var complainRef = db.ref("/complain");
-var complainStackRef =  db.ref("/stack/complains");
-var policeAvailableRef = db.ref("/police");
-
-
-var db = admin.database();
 
 
 
-const automaticComplainAssign = ()=>{
+export const automaticComplainAssign = ()=>{
     policeAvailableRef.child("available").orderByKey().limitToFirst(1).once("value",function(snapshot) {
         let availablePolice = snapshot.val()
         if(availablePolice){
@@ -66,16 +51,6 @@ const automaticComplainAssign = ()=>{
     })
 }
 
-
-const OffDutyPolice = ()=>{
-
-}
-
-cron.schedule('*/2 * * * *', () => {
-    console.log('running a task every two minutes');
-    automaticComplainAssign()
-
-});
 
 
 
